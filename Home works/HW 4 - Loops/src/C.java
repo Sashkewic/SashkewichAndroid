@@ -5,11 +5,9 @@ public class C {
         // Задача С - Напишите программу которая будет получать числа до тех пор пока полученное число позитивное.
 
         Scanner sc = new Scanner(System.in);
-        System.out.print("Введите число: ");
-        int number = sc.nextInt();
+        int number;
 
-
-        while (number > 0) {
+        do {
             System.out.print("Введите число: ");
             number = sc.nextInt();
 
@@ -17,5 +15,7 @@ public class C {
                 System.out.print("До свидания!");
             }
         }
+
+        while (number > 0);
     }
 }
