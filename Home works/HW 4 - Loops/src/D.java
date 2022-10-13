@@ -8,7 +8,7 @@ public class D {
 
         int number, number1, count;
         System.out.print("Введите натуральное число: ");
-        number = sc.nextInt(); // получаем число
+        number = sc.nextInt(); // получаем число, например - 1234
 
         number1 = number % 10; // под пер-ной num1 получаем остаток
         number = Math.floorDiv(number, 10); // получаем целое число, выкинув остаток
