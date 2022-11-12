@@ -61,7 +61,6 @@ public class Circle {
 
     @Override // с помощью аннотации
     public String toString() { // переопределим метод toString
-        String printMessage = "Информация о круге: " + "\n" + "Радиус: " + this.radius + "\n" + "Цвет: " + this.color + "\n" + "Прозрачность: " + this.isTransparency() + "\n";
-        return printMessage;
+        return "Информация о круге: " + "\n" + "Радиус: " + this.radius + "\n" + "Цвет: " + this.color + "\n" + "Прозрачность: " + this.isTransparency() + "\n";
     }
 }
