@@ -6,12 +6,11 @@ public class Main {
         ContainersForFruits forFriuts = new ContainersForFruits(0); // кол-во контейнеров для фруктов
         MainShelves mainShelves = new MainShelves(3); // кол-во основных полок
         SideShelves sideShelves = new SideShelves(4); // кол-во боковых полок
-        MinT minT = new MinT(-20); // Минимальная регулируемая температура внутры холодильника
-        MaxT maxT = new MaxT(-5); // Максимальная регулируемая температура внутры холодильника
-        Price price = new Price(0); // Максимальная регулируемая температура внутры холодильника
+        Temp temp = new Temp(-30); // Максимальная регулируемая температура внутры холодильника
+        Price price = new Price(0); // Цена
 
         Fridge myHomeFridge = new Fridge("Samsung",
-                weightFridge, freeze, forVeget, forFriuts, mainShelves, sideShelves, minT, maxT, price);
+                weightFridge, freeze, forVeget, forFriuts, mainShelves, sideShelves, temp, price);
 
         price.setMoneyPrice(27000);
 

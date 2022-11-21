@@ -8,8 +8,7 @@ public class Fridge {
     MainShelves countMainShelves; // количество основных полок холодильника
     SideShelves countSideShelves; // количество боковых (дверных) полок холодильника
 
-    MinT minThermometer;
-    MaxT maxThermometer;
+    Temp temp;
 
     Price moneyPrice;
 
@@ -21,7 +20,7 @@ public class Fridge {
     }
 
     public Fridge(String name, WeightFridge weightFridge, Freeze freeze, ContainersForVeget countContainersForVeget,
-                  ContainersForFruits countContainersForFruits, MainShelves countMainShelves, SideShelves countSideShelves, MinT minT, MaxT maxT, Price price) {
+                  ContainersForFruits countContainersForFruits, MainShelves countMainShelves, SideShelves countSideShelves, Temp temp, Price price) {
         this.name = name;
         this.weightFridge = weightFridge;
         this.freeze = freeze;
@@ -29,8 +28,7 @@ public class Fridge {
         this.countSideShelves = countSideShelves;
         this.countContainersForVeget = countContainersForVeget;
         this.countContainersForFruits = countContainersForFruits;
-        this.minThermometer = minT;
-        this.maxThermometer = maxT;
+        this.temp = temp;
         this.moneyPrice = price;
     }
 
@@ -43,7 +41,7 @@ public class Fridge {
                 "\n" + "4) Количество контейнеров для фруктов: " + this.countContainersForFruits.getCountContainersForFruits() + " шт" +
                 "\n" + "5) Количество полок в холодильнике: " + this.countMainShelves.getCountMainShelves() + " шт" +
                 "\n" + "6) Количество боковых полок в холодильнике: " + this.countSideShelves.getCountSideShelves() + " шт" +
-                "\n" + "7) Минимальная регулируемая температура внутры камеры:" + " от " + this.minThermometer.getMinT() + "*C" + " до " + this.maxThermometer.getMaxT() + "*C" +
+                "\n" + "7) Минимальная температура внутри холодильника: "  + this.temp.getTemp() +
                 "\n" + "9) Цена: " + this.moneyPrice.getMoneyPrice() + " cом";
     }
 }
