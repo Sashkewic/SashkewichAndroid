@@ -37,16 +37,16 @@ public class Main {
 
 
         for (int i = 0; i < allAnimal.length; i++) {
-            if (allAnimal[i] instanceof Turtle) {
-                // если имеет тип ссылок Turtle (то есть Черепаха).
+            if (allAnimal[i] instanceof Layable) {
+                // если имеет тип ссылок Layable (то есть откладывать яйца).
                 turtles[i] = (Turtle) allAnimal[i]; // черепаха переселяется в аквариум
                 turtles[i].layEggs(5); // черепаха нас оповещает, что оно вынесло столько-то яиц
             }
         }
 
         for (int j = 5; j < allAnimal.length - 5; j++) {
-            if (allAnimal[j] instanceof Shark) {
-                // если имеет тип ссылки Shark (то есть Акула).
+            if (allAnimal[j] instanceof Huntable) {
+                // если имеет тип ссылки Huntable (то есть охотники).
                 sharks[indexJ] = (Shark) allAnimal[j]; // акула переселяется в аквариум
                 sharks[indexJ].hunt(); // акула нас оповещает, что оно умеет охотиться
                 indexJ++;
@@ -54,8 +54,8 @@ public class Main {
         }
 
         for (int k = 10; k < allAnimal.length; k++) {
-            if (allAnimal[k] instanceof Duck) {
-                // если имеет тип ссылок Duck (то есть Утка).
+            if (allAnimal[k] instanceof Eatable) {
+                // если имеет тип ссылок Eatable (то есть едят).
                 ducks[indexK] = (Duck) allAnimal[k]; // утка переселяется в аквариум
                 ducks[indexK].eat(); // утка нас оповещает, что оно умеет есть
                 indexK++;
