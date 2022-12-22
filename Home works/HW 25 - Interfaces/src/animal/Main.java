@@ -38,8 +38,8 @@ public class Main {
 
         for (int i = 0; i < allAnimal.length; i++) {
             if (allAnimal[i] instanceof Layable) {
-                // если имеет тип ссылок Layable (то есть откладывать яйца).
-                turtles[i] = (Turtle) allAnimal[i]; // черепаха переселяется в аквариум
+                // если имеет тип ссылок Layable (то есть откладывающие яйца).
+                turtles[i] = (Turtle) allAnimal[i]; // черепаха переселяется в первый
                 turtles[i].layEggs(5); // черепаха нас оповещает, что оно вынесло столько-то яиц
             }
         }
@@ -47,7 +47,7 @@ public class Main {
         for (int j = 5; j < allAnimal.length - 5; j++) {
             if (allAnimal[j] instanceof Huntable) {
                 // если имеет тип ссылки Huntable (то есть охотники).
-                sharks[indexJ] = (Shark) allAnimal[j]; // акула переселяется в аквариум
+                sharks[indexJ] = (Shark) allAnimal[j]; // акула переселяется во второй массив
                 sharks[indexJ].hunt(); // акула нас оповещает, что оно умеет охотиться
                 indexJ++;
             }
@@ -56,7 +56,7 @@ public class Main {
         for (int k = 10; k < allAnimal.length; k++) {
             if (allAnimal[k] instanceof Eatable) {
                 // если имеет тип ссылок Eatable (то есть едят).
-                ducks[indexK] = (Duck) allAnimal[k]; // утка переселяется в аквариум
+                ducks[indexK] = (Duck) allAnimal[k]; // утка переселяется в третий массив
                 ducks[indexK].eat(); // утка нас оповещает, что оно умеет есть
                 indexK++;
             }
