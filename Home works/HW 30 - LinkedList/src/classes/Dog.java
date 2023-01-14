@@ -2,12 +2,18 @@ package classes;
 
 import interfaces.Voiceable;
 
-public class Dog implements Voiceable {
-    static int index;
-    private String name;
-    private double age;
+public class Dog extends Animal implements Voiceable {
+    static double dogsAge = 0.5; // изначальный возраст собаки
 
     // геттеры и сеттеры
+
+    public static double getDogsAge() {
+        return dogsAge;
+    }
+    public static void setDogsAge(double dogsAge) {
+        Dog.dogsAge = dogsAge;
+    }
+
     public String getName() {
         return name;
     }
@@ -25,9 +31,8 @@ public class Dog implements Voiceable {
 
     // конструктор
     public Dog(String name, double age) {
-        this.name = name;
-        this.age = age;
-        index++;
+        super(name, age);
+        dogsAge += 0.2;
     }
 
     // реализация метода(ов)
@@ -38,6 +43,6 @@ public class Dog implements Voiceable {
 
     @Override
     public String toString() {
-        return "Имя: " + this.name + "," + " Возраст: " + this.age;
+        return this.name;
     }
 }

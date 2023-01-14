@@ -2,39 +2,22 @@ package classes;
 
 import interfaces.Voiceable;
 
-public class Cat implements Voiceable {
-    static int index;
-    private String name;
-    private double age;
-
-    public static int getIndex() {
-        return index;
-    }
-    public static void setIndex(int index) {
-        Cat.index = index;
-    }
+public class Cat extends Animal implements Voiceable {
+    static double catsAge = 0.5; // изначальный возраст кошки
 
     // геттеры и сеттеры
-    public String getName() {
-        return name;
-    }
-    public void setName(String name) {
-        this.name = name;
+    public static double getCatsAge() {
+        return catsAge;
     }
 
-    public double getAge() {
-        return age;
-    }
-
-    public void setAge(double age) {
-        this.age = age;
+    public static void setCatsAge(double catsAge) {
+        Cat.catsAge = catsAge;
     }
 
     // конструктор
     public Cat(String name, double age) {
-        this.name = name;
-        this.age = age;
-        index++;
+        super(name, age);
+        catsAge += 0.2;
     }
 
     // реализация метода(ов)
@@ -45,6 +28,6 @@ public class Cat implements Voiceable {
 
     @Override
     public String toString() {
-        return "Имя: " + this.name + "," + " Возраст: " + this.age;
+        return this.name;
     }
 }

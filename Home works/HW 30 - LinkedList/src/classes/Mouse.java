@@ -2,30 +2,20 @@ package classes;
 
 import interfaces.Voiceable;
 
-public class Mouse implements Voiceable {
-    private String name;
-    private double age;
+public class Mouse extends Animal implements Voiceable {
+    static double mouseAge = 0.5; // изначальный возраст мышек
 
-    // геттеры и сеттеры
-    public String getName() {
-        return name;
+    public static double getMouseAge() {
+        return mouseAge;
     }
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public double getAge() {
-        return age;
-    }
-
-    public void setAge(double age) {
-        this.age = age;
+    public static void setMouseAge(double mouseAge) {
+        Mouse.mouseAge = mouseAge;
     }
 
     // конструктор
     public Mouse(String name, double age) {
-        this.name = name;
-        this.age = age;
+        super(name, age);
+        mouseAge += 0.2;
     }
 
     // реализация метода(ов)
@@ -36,6 +26,6 @@ public class Mouse implements Voiceable {
 
     @Override
     public String toString() {
-        return "Имя: " + this.name + "," + " Возраст: " + this.age;
+        return this.name;
     }
 }
