@@ -33,23 +33,23 @@ public class Main {
 
         // =================================
         for (int i = 0; i < animals.size(); i++){
-            // 3. Удалить из списка каждую 5 кошку
-            if (animals.get(i) instanceof Cat){ // если находим кошку в списке
+            // 3. Удалить из списка каждую 5 "Кошку"
+            if (animals.get(i) instanceof Cat){ // если находим "Кошку" в списке
                 countCats++; // количество кошек + 1
 
-                if (countCats / 5 == 1){ // если попадается нам каждая 5ая кошка
+                if (countCats / 5 == 1){ // если попадается нам каждая 5ая "Кошка"
                     countCats = 0; // счетчик кошек обнуляется
-                    animals.remove(i); // а каждую 5ую кошку удаляем
+                    animals.remove(i); // а каждую 5ую "Кошку" удаляем
                 }
             }
 
             // 4. Вставить после каждой 3 собаки – одну мышку.
-            else if (animals.get(i) instanceof Dog){ // если находим собаку в списке
+            else if (animals.get(i) instanceof Dog){ // если находим "Собаку" в списке
                 countDogs++; // количество собак + 1
 
-                if (countDogs / 3 == 1){ // если попадается нам каждая 3ая собака
+                if (countDogs / 3 == 1){ // если попадается нам каждая 3ая "Собака"
                     countDogs = 0; // счетчик собак обнуляется
-                    animals.add(i + 1, new Mouse("Мышь", Mouse.getMouseAge())); // после 3ей собаки следующей будет созданная мышь
+                    animals.add(i + 1, new Mouse("Мышь", Mouse.getMouseAge())); // после 3ей "Собаки" следующим элементом будет созданная "Мышь"
                     i++;
                 }
             }
@@ -62,11 +62,12 @@ public class Main {
         // 5. Найти оказавшихся рядом кошек и мышек, переместить их в новый LinkedList.
         LinkedList<Animal> catsMice = new LinkedList<>(); // новый список всех кошек и мышей, соседствующих в списке animals
         for (int i = 0; i < animals.size() - 1; i++) { // пробегаем по спис
-            if ((animals.get(i) instanceof Cat && animals.get(i + 1) instanceof Mouse) || (animals.get(i + 1) instanceof Cat && animals.get(i) instanceof Mouse)) {
+            if ((animals.get(i) instanceof Cat && animals.get(i + 1) instanceof Mouse) ||
+                    (animals.get(i + 1) instanceof Cat && animals.get(i) instanceof Mouse)) {
                 // если в массиве животных текущий элемент "Кошка", а следующий "Мышь" (и наоборот)
                 catsMice.add(animals.get(i)); // добавляем в новый список "Мышь"
                 animals.remove(i); // "Мышь" из старого списка удаляем
-                catsMice.add(animals.get(i)); // добавляем в новый список "Кошку" (так как после удаления "Мышки" произошел сдвиг элементов списка на 1 индекс назад)
+                catsMice.add(animals.get(i)); // добавляем в новый список "Кошку" (так как после удаления "Мыши" произошло изменение ссылки у следующего элемента)
                 animals.remove(i); // "Кошку" из старого списка удаляем
             }
         }
@@ -78,16 +79,15 @@ public class Main {
         // =============================================
         // 6.Скопировать весь список из пункта 4 в ArrayList.
         animals.toArray();
-        System.out.println("ArrayList 'animals': " + animals + "\n");
 
         // =============================================
         // 7. Получить сумму возрастов отдельно по мышкам, кошкам и собакам.
         for (int i = 0; i < animals.size(); i++) {
             if (animals.get(i) instanceof Cat) // если текущий элемент списка "Кошка"
                 catsAge += animals.get(i).getAge(); // прибавляем возраст "Кошки" к сумме всех возрастов "Кошек"
-            if (animals.get(i) instanceof Dog) // если текущий элемент списка "Собака"
+            else if (animals.get(i) instanceof Dog) // если текущий элемент списка "Собака"
                 dogsAge += animals.get(i).getAge(); // прибавляем возраст "Собаки" к сумме всех возрастов "Собак"
-            if (animals.get(i) instanceof Mouse) // если текущий элемент списка "Мышь"
+            else if (animals.get(i) instanceof Mouse) // если текущий элемент списка "Мышь"
                 miceAge += animals.get(i).getAge(); // прибавляем возраст "Мыши" к сумме всех возрастов "Мышей"
         }
 
