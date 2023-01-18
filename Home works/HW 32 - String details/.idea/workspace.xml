@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="4b3958d5-89da-4e6b-9da0-446e950b2e3d" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../../Class lessons/Lesson 31 - Enum/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Class lessons/Lesson 31 - Enum/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Class lessons/Lesson 31 - Enum/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Class lessons/Lesson 31 - Enum/.idea/uiDesigner.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Class lessons/Lesson 31 - Enum/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Class lessons/Lesson 31 - Enum/Lesson 31 - Enum.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Class lessons/Lesson 31 - Enum/out/production/Lesson 31 - Enum/Day.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Class lessons/Lesson 31 - Enum/out/production/Lesson 31 - Enum/Main$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Class lessons/Lesson 31 - Enum/out/production/Lesson 31 - Enum/Main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Class lessons/Lesson 31 - Enum/src/Day.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Class lessons/Lesson 31 - Enum/src/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../HW 30 - LinkedList/out/production/HW 30 - LinkedList/classes/Cat.class" beforeDir="false" afterPath="$PROJECT_DIR$/../HW 30 - LinkedList/out/production/HW 30 - LinkedList/classes/Cat.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../HW 30 - LinkedList/out/production/HW 30 - LinkedList/classes/Dog.class" beforeDir="false" afterPath="$PROJECT_DIR$/../HW 30 - LinkedList/out/production/HW 30 - LinkedList/classes/Dog.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../HW 30 - LinkedList/out/production/HW 30 - LinkedList/classes/Mouse.class" beforeDir="false" afterPath="$PROJECT_DIR$/../HW 30 - LinkedList/out/production/HW 30 - LinkedList/classes/Mouse.class" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2KRRlkVbsTgYS4xPVjQJSQhC3U9" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "last_opened_file_path": "C:/Users/Admin/Desktop/SashkewichAndroid/Home works/HW 31 - String details"
+  }
+}]]></component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="4b3958d5-89da-4e6b-9da0-446e950b2e3d" name="Changes" comment="" />
+      <created>1673935563420</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1673935563420</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>
