@@ -38,7 +38,6 @@ public class Main {
 //            System.out.println("Результат: " + fileName + "\n");
 //        }
 
-
         /* то же самое, только используя StringBuilder */
         else {
             StringBuilder fileNameBuilder = new StringBuilder();
