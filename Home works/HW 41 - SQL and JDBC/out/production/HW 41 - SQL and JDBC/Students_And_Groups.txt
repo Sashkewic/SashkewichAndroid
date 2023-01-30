@@ -1,0 +1,47 @@
+/* 1. Создать таблицу «Группы» (ID, Наименование) */
+
+CREATE TABLE groups
+(
+    id         integer primary key,
+    name_group varchar(50) unique
+);
+
+/* 2. Создать таблицу «Студенты» (ID, ФИО, группа) */
+
+CREATE TABLE students
+(
+    id       integer primary key,
+    fullname varchar(50) not null,
+    group_of varchar(50) references groups (name_group)
+);
+
+SELECT * FROM groups;
+SELECT * FROM students;
+
+/* 3. Группы: Java, C++, Python, SQL, C#*/
+INSERT INTO groups (id, name_group)
+VALUES (1, 'Java'),
+       (2, 'C++'),
+       (3, 'Python'),
+       (4, 'SQL'),
+       (5, 'C#');
+
+/* 4. Студенты Иванов (java), Петров (java), Сидоров (с++), Cмирнов (python), Егоров (NULL) */
+INSERT INTO students (id, fullname, group_of)
+VALUES (1, 'Иванов', 'Java'),
+       (2, 'Петров', 'Java'),
+       (3, 'Сидоров', 'C++'),
+       (4, 'Cмирнов', 'Python'),
+       (5, 'Егоров', NULL);
+
+/* 5. Выбрать всех студентов посещающих курсы и все курсы */
+SELECT s.fullname, g.name_group FROM students s JOIN groups g on g.name_group = s.group_of WHERE group_of IS NOT NULL;
+SELECT groups.name_group FROM groups;
+
+/* 6. Выбрать тех кто ходит на какие-то курсы */
+SELECT s.fullname, g.name_group FROM students s JOIN groups g on g.name_group = s.group_of WHERE group_of = 'Python';
+
+/* 7. Выбрать Java студентов */
+SELECT s.fullname, g.name_group FROM students s JOIN groups g on g.name_group = s.group_of WHERE group_of = 'Java';
+
+SELECT count(fullname) FROM students s WHERE fullname like '%а%';
