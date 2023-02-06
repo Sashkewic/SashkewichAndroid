@@ -1,0 +1,30 @@
+CREATE TABLE countries
+(
+    id   integer primary key,
+    name varchar(50) unique not null
+);
+
+CREATE TABLE cities
+(
+    id   integer primary key,
+    name varchar(50) unique not null,
+    country integer references countries (id)
+);
+
+
+CREATE TABLE mayors
+(
+    id   integer primary key,
+    fullname varchar(50) unique not null,
+    city integer references cities (id)
+);
+
+DROP TABLE countries;
+DROP TABLE cities;
+DROP TABLE mayors;
+
+SELECT * FROM countries;
+SELECT * FROM cities;
+SELECT * FROM mayors;
+
+SELECT cities.id, cities.name, countries.name FROM cities JOIN countries ON cities.id = countries.id;
