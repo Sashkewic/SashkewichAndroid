@@ -1,0 +1,137 @@
+CREATE TABLE university
+(
+    id   integer primary key,
+    name varchar(50) unique not null
+);
+
+CREATE TABLE faculty
+(
+    id         integer primary key,
+    name       varchar(50) not null,
+    university_id integer references university (id)
+);
+
+CREATE TABLE groups
+(
+    id         integer primary key,
+    faculty_id integer references faculty (id),
+    group_code varchar(20) unique not null
+);
+
+CREATE TABLE student
+(
+    id         integer primary key,
+    fullname   varchar(40) not null,
+    group_id   integer references groups (id),
+    birthdate  date not null
+);
+
+CREATE TABLE subject
+(
+    id     integer primary key,
+    name   varchar(40) not null
+);
+
+CREATE TABLE grade
+(
+    student_id integer references student (id),
+    grade integer not null,
+    subject_id integer references subject (id)
+);
+
+DROP TABLE university;
+DROP TABLE faculty;
+DROP TABLE groups;
+DROP TABLE student;
+DROP TABLE subject;
+DROP TABLE grade;
+
+SELECT * FROM university;
+SELECT * FROM faculty;
+SELECT * FROM groups;
+SELECT * FROM student;
+SELECT * FROM subject;
+SELECT * FROM grade;
+
+INSERT INTO university values (1, 'Кыргызско-Российский Славянский Университет'),
+                              (2, 'Бишкекский Гуманитарный Университет'),
+                              (3, 'Кыргызский Государственный Технический Университет');
+
+INSERT INTO faculty values (1, 'Гуманитарный факультет', 1),
+                              (2, 'Факультет архитектуры, дизайна и строительства', 1),
+                              (3, 'Естественно-технический факультет', 1),
+                              (4, 'Факультет Педагогического образования', 2),
+                              (5, 'Факультет востоковедения и международных отношений', 2),
+                              (6, 'Кыргызско-китайский факультет', 2),
+                              (7, 'Факультет информационных технологии', 3),
+                              (8, 'Факультет транспорта и машиностроения', 3),
+                              (9, 'Энергетический факультет', 3);
+
+
+INSERT INTO groups values (1, 1, 'ГППа 1-22'),
+                           (2, 2, 'ГАДС 1-22'),
+                           (3, 3, 'ГМИ 1-22'),
+                           (4, 4, 'ГПО 1-22'),
+                           (5, 5, 'ГВМО 1-22'),
+                           (6, 6, 'ГККО 1-22'),
+                           (7, 7, 'ГИТ 1-22'),
+                           (8, 8, 'ГМ 1-22'),
+                           (9, 9, 'ГБЭ 1-22');
+
+INSERT INTO student values (1, 'Александров Елисей Романович', 1, '2005-07-03'),
+                          (2, 'Алексеева Варвара Александровна', 2, '2005-11-13'),
+                          (3, 'Крюков Фёдор Александрович', 3, '2006-01-21'),
+                          (4, 'Соколова София Константиновна', 4, '2005-05-17'),
+                          (5, 'Кузнецов Даниил Алексеевич', 5, '2006-02-04'),
+                          (6, 'Тихонов Максим Романович', 6, '2005-08-27'),
+                          (7, 'Авдеев Александр Максимович', 7, '2005-06-09'),
+                          (8, 'Мартынова Варвара Андреевна', 8, '2005-10-23'),
+                          (9, 'Зеленин Матвей Артурович', 9, '2005-04-29');
+
+INSERT INTO subject values (1, 'Философия'),
+                           (2, 'Латинский язык'),
+                           (3, 'Начертательная геометрия'),
+                           (4, 'Основы компьютерного проектирования'),
+                           (5, 'Высшая математика'),
+                           (6, 'Компьютерная инженерия'),
+                           (7, 'Педагогика'),
+                           (8, 'Психология'),
+                           (9, 'Мировая история'),
+                           (10, 'Политическая и экономическая география'),
+                           (11, 'Кыргызский язык'),
+                           (12, 'Китайский язык'),
+                           (13, 'Физика'),
+                           (14, 'Теория машин и механизмов'),
+                           (15, 'Производство электроэнергии'),
+                           (16, 'Электроэнергетические системы и сети');
+
+INSERT INTO grade values (1, 77, 1),
+                         (1, 81, 2),
+                         (2, 74, 3),
+                         (2, 85, 4),
+                         (3, 82, 5),
+                         (3, 65, 6),
+                         (4, 57, 7),
+                         (4, 87, 8),
+                         (5, 69, 9),
+                         (5, 73, 10),
+                         (6, 55, 11),
+                         (6, 76, 12),
+                         (7, 86, 5),
+                         (7, 100, 6),
+                         (8, 84, 13),
+                         (8, 55, 14),
+                         (9, 93, 15),
+                         (9, 90, 16);
+
+SELECT st.id, st.fullname, st.birthdate, g.group_code, f.name, u.name
+FROM student st
+JOIN groups g on g.id = st.group_id
+JOIN faculty f on f.id = g.faculty_id
+JOIN university u on u.id = f.university_id WHERE st.fullname = 'Александров Елисей Романович';
+
+SELECT st.id, st.fullname, avg(g.grade) FROM student st JOIN grade g on st.id = g.student_id WHERE st.fullname = 'Крюков Фёдор Александрович' group by st.id;
+
+DELETE FROM student st WHERE st.fullname = 'Цой Юрий Александрович';
+
+SELECT count(*) FROM student;
